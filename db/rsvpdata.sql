@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS rsvpdata (
 
 
 INSERT INTO rsvpdata (_id, name, email) VALUES
-(1, 'Vinod', 'test@test.com'),
-(2, 'asd', 'tharunsonu101832@gmail.com'),
-(3, 'Pra', 'admin@blog.com');
+(1, 'Test', 'test@yahoo.com'),
+(2, 'Test1', 'test1@gmail.com'),
+(3, 'Test22', 'test@g.com');
 
