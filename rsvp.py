@@ -1,7 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request,make_response
 import mysql.connector
-#from pymongo import MongoClient
-#from bson.objectid import ObjectId
 import socket
 import os
 import json
@@ -13,12 +11,6 @@ app = Flask(__name__)
 TEXT1=os.environ.get('TEXT1', "Hackfest")
 TEXT2=os.environ.get('TEXT2', "Registration")
 ORGANIZER=os.environ.get('ORGANIZER', "UVCE")
-
-""" MONGODB_HOST=os.environ.get('MONGODB_HOST', 'localhost')
-client = MongoClient(MONGODB_HOST, 27017)
-db = client.rsvpdata
- """
-
 config = {
         'user': 'root',
          'password': 'password',
@@ -29,12 +21,7 @@ config = {
 mydb = mysql.connector.connect(user='insta_admin', password='insta2018',
                               host='db', database='RSVP',
                               auth_plugin='mysql_native_password')
-""" mydb = mysql.connector.connect(
-  user="root",
-  password="",
-  host='localhost',
-  database="RSVP"
-) """
+
 mycursor = mydb.cursor();
 mycursor.execute("CREATE TABLE IF NOT EXISTS rsvpdata (_id int(100) NOT NULL AUTO_INCREMENT,name varchar(100) NOT NULL,email varchar(100) NOT NULL,PRIMARY KEY (_id)) ;")
 class RSVP(object):
